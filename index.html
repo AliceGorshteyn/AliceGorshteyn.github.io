@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<TITLE>ГИС-проект</TITLE>
+		<meta charset="UTF-8"/>
+		<script src = "./libs/leaflet.js"></script>
+		<link rel="stylesheet" href = "./libs/leaflet.css"/>
+		<style>
+			html,body,#map{height:100%;width:100%;margin:0px}
+		</style>
+	</head>
+	<body>
+		<div id="map"></div>
+		<script>
+		//создание объектов тайлового слоя
+			var mapBoxUrl = 'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw';
+			var mapBoxMap = L.tileLayer(mapBoxUrl,{
+				id: 'mapbox/streets-v11'
+			});
+		//создание объекта карты
+			var myMap = L.map('map',{
+				center:[55.763863, 37.661723],//центр карты
+				zoom: 15,//масштаб
+				layers:[mapBoxMap]//объекты слоя
+			});
+		</script>
+	</body>
+</html>
