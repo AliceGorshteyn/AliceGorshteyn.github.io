@@ -12,13 +12,13 @@
 	<body>
 		<div id="map"></div>
 		<script>
-		//создание объектов тайлового слоя
-			var mapBoxUrl = 'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw';
-			var mapBoxMap = L.tileLayer(mapBoxUrl,{
+		
+			let mapBoxUrl = 'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw';
+			let mapBoxMap = L.tileLayer(mapBoxUrl,{
 				id: 'mapbox/streets-v11'
 			});
-		//создание объекта карты
-			var myMap = L.map('map',{
+		
+			let myMap = L.map('map',{
 				center:[55.763863, 37.661723],//центр карты
 				zoom: 15,//масштаб
 				layers:[mapBoxMap]//объекты слоя
